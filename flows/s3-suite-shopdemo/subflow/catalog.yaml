@@ -1,0 +1,20 @@
+appId: com.curso.shopdemo
+---
+- assertVisible: "Smartphone Pro 128GB"
+- tapOn: "Smartphone Pro 128GB"
+- assertVisible:
+    id: "tela-detalhe"
+- assertVisible: "Smartphone Pro 128GB"
+- assertVisible: "R$ 1.899,90"
+- tapOn: 
+    id: "btn-voltar"
+
+- assertNotVisible: "Mochila para Notebook"
+- scrollUntilVisible: 
+    element: "Mochila para Notebook"
+- tapOn: "Mochila para Notebook"
+
+- assertVisible: "Mochila para Notebook"
+- assertVisible: "R$ 1.89,90"
+
+- tapOn: "Voltar"

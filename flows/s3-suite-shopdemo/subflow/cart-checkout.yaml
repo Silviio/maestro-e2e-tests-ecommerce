@@ -1,0 +1,23 @@
+appId: com.curso.shopdemo
+---
+- tapOn: "Fone de Ouvido Bluetooth"
+- tapOn: "Adicionar ao carrinho"
+- assertVisible: "Produto adicionado com sucesso!"
+- tapOn:
+    id: "btn-ver-carrinho"
+- assertVisible: "R$ 159,90"
+- assertVisible: "Total: R$ 159,90"
+- assertVisible:
+    id: "btn-finalizar"
+    enabled: true
+- tapOn: "btn-finalizar"
+- tapOn: "input-nome"
+- inputText: "Test"
+- tapOn:
+    id: "input-endereco"
+- inputText: "Test"
+- tapOn: "input-cartao"
+- inputText: "Test"
+- hideKeyboard
+- tapOn: "btn-confirmar"
+- assertVisible: "Pedido #>*"

@@ -1,0 +1,7 @@
+appId: com.curso.shopdemo
+---
+- launchApp:
+    clearState: true
+- runFlow: subflow/login.yaml
+- runFlow: subflow/catalog.yaml
+- runFlow: subflow/cart-checkout.yaml

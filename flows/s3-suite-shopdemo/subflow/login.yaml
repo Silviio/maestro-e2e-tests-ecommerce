@@ -1,0 +1,19 @@
+appId: com.curso.shopdemo
+---
+- tapOn:
+    id: "input-email"
+- inputText: "cliente@shopdemo.com"
+- tapOn:
+    id: "input-senha"
+- inputText: "123456"
+- tapOn: "btn-entrar"
+- assertVisible: "Catalogo"
+- assertNotVisible: "btn-entrar"
+
+- assertNotVisible:
+    id: "erro-login"
+    text: "E-mail ou senha invalidos"
+
+- extendedWaitUntil:
+    visible: "tela-catalogo"
+    timeout: 5000
