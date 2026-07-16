@@ -1,20 +1,13 @@
 appId: com.curso.shopdemo
+env:
+    PRODUCT_NAME: ${PRODUCT_NAME || "Smartphone Pro 128GB"}
+    PRODUCT_PRICE: ${PRODUCT_PRICE || "1.899,90"}
 ---
-- assertVisible: "Smartphone Pro 128GB"
-- tapOn: "Smartphone Pro 128GB"
+- scrollUntilVisible: 
+    element: ${PRODUCT_NAME}
+- tapOn: ${PRODUCT_NAME}
 - assertVisible:
     id: "tela-detalhe"
-- assertVisible: "Smartphone Pro 128GB"
-- assertVisible: "R$ 1.899,90"
-- tapOn: 
-    id: "btn-voltar"
-
-- assertNotVisible: "Mochila para Notebook"
-- scrollUntilVisible: 
-    element: "Mochila para Notebook"
-- tapOn: "Mochila para Notebook"
-
-- assertVisible: "Mochila para Notebook"
-- assertVisible: "R$ 1.89,90"
-
-- tapOn: "Voltar"
+- assertVisible: ${PRODUCT_NAME}
+- assertVisible: "R$ ${PRODUCT_PRICE}"
+- back

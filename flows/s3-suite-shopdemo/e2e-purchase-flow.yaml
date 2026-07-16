@@ -1,4 +1,15 @@
 appId: com.curso.shopdemo
+env:
+    EMAIL_ADDRESS: ${EMAIL_ADDRESS || "cliente@shopdemo.com"}
+    PASSWORD: ${PASSWORD || "123456"}
+    PRODUCT_NAME: ${PRODUCT_NAME || "Smartphone Pro 128GB"}
+    PRODUCT_PRICE: ${PRODUCT_PRICE || "1.899,90"}
+    PRODUCT_IN_CART: ${PRODUCT_IN_CART || "Fone de Ouvido Bluetooth"}
+    PRODUCT_PRICE_CART: ${PRODUCT_PRICE_CART || "159,90"}
+    TOTAL_CART: ${TOTAL_CART || "159,90"}
+    NAME: ${NAME || "Jeferson"}
+    ADDRESS: ${ADDRESS || "Rua das Flores, 100"}
+    CARD: ${CARD || "4111-1111-1111-1111"}
 ---
 - launchApp:
     clearState: true

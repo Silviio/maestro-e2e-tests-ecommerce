@@ -1,11 +1,15 @@
 appId: com.curso.shopdemo
+env:
+    EMAIL_ADDRESS: ${EMAIL_ADDRESS || "cliente@shopdemo.com"}
+    PASSWORD: ${PASSWORD || "123456"}
 ---
 - tapOn:
     id: "input-email"
-- inputText: "cliente@shopdemo.com"
+- inputText: "${EMAIL_ADDRESS}"
 - tapOn:
     id: "input-senha"
-- inputText: "123456"
+- inputText: "${PASSWORD}"
+- hideKeyboard
 - tapOn: "btn-entrar"
 - assertVisible: "Catalogo"
 - assertNotVisible: "btn-entrar"

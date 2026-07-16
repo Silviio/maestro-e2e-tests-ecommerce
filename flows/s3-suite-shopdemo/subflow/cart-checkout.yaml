@@ -1,23 +1,41 @@
 appId: com.curso.shopdemo
+env:
+    PRODUCT_IN_CART: ${PRODUCT_IN_CART || "Fone de Ouvido Bluetooth"}
+    PRODUCT_PRICE: ${PRODUCT_PRICE || "159,90"}
+    TOTAL_CART: ${TOTAL_CART || "159,90"}
+    NAME: ${NAME || "Test"}
+    ADDRESS: ${ADDRESS || "Rua Test, 123"}
+    CARD: ${CARD || "0000-1111-2222-3333"}
 ---
-- tapOn: "Fone de Ouvido Bluetooth"
-- tapOn: "Adicionar ao carrinho"
+- scrollUntilVisible: 
+    element: ${PRODUCT_IN_CART}
+    direction: UP
+- tapOn: ${PRODUCT_IN_CART}
+- tapOn:
+    id: "btn-adicionar"
 - assertVisible: "Produto adicionado com sucesso!"
 - tapOn:
     id: "btn-ver-carrinho"
-- assertVisible: "R$ 159,90"
-- assertVisible: "Total: R$ 159,90"
+- assertVisible: "R$ ${PRODUCT_PRICE}"
+- assertVisible: "Total: R$ ${TOTAL_CART}"
 - assertVisible:
     id: "btn-finalizar"
     enabled: true
-- tapOn: "btn-finalizar"
-- tapOn: "input-nome"
-- inputText: "Test"
+- tapOn:
+    id: "btn-finalizar"
+- tapOn:
+    id: "input-nome"
+- inputText: ${NAME}
 - tapOn:
     id: "input-endereco"
-- inputText: "Test"
-- tapOn: "input-cartao"
-- inputText: "Test"
+- inputText: ${ADDRESS}
+- tapOn:
+    id: "input-cartao"
+- inputText: ${CARD}
 - hideKeyboard
-- tapOn: "btn-confirmar"
-- assertVisible: "Pedido #>*"
+- tapOn:
+    id: "btn-confirmar"
+- assertVisible: "Pedido confirmado"
+- assertVisible:
+    id: "confirmacao-numero"
+- assertVisible: "Pedido #.*"
